@@ -1,3 +1,31 @@
+// convertFahrToCelsius Algorithm
+
+function convertFahrToCelsius(Fahr){
+    if (isNaN(Fahr)==true){
+        if (Array.isArray(Fahr)==true){
+            console.log(JSON.stringify(Fahr) +" is not a valid number but an array.");
+            return Fahr;
+            }else if (typeof(Fahr)=="object"){
+            console.log(JSON.stringify(Fahr) +" is not a valid number but an object.");
+            return Fahr;}
+        else{console.log(JSON.stringify(Fahr) +" is an invalid paramter." );
+            return Fahr;
+        }
+     }
+     else {
+    var celsius;
+    celsius = parseFloat((Fahr - 32) * 5/9).toFixed(4);
+    console.log(celsius); 
+    return celsius;
+    }
+}
+convertFahrToCelsius(18)
+convertFahrToCelsius("18")
+convertFahrToCelsius([1,2,3])
+convertFahrToCelsius({temp: 0})
+
+// checkYuGiOh Algorithm
+
 function checkYuGiOh(num){
     var num;
      if (isNaN(num)==true){
@@ -14,11 +42,7 @@ function checkYuGiOh(num){
      }
      else {
          var ans;
-
-         //assigning the check function to a variable and passing the parameter in the checkYuGiOh function to it
          ans = create(num);
-
-         //a function that creates an array of numbers from 1 to n and replaces multiples of 2, 3, and 5 with "yu", "gi" and "oh"
          function create(n){
             var n;
             var arr = [];
@@ -47,6 +71,6 @@ function checkYuGiOh(num){
            }
            return ans;
      }}
-checkYuGiOh(10);
-checkYuGiOh("5");
-checkYuGiOh("five");
+     checkYuGiOh(10) ;
+     checkYuGiOh("5");
+     checkYuGiOh("fizzbuzz is meh");
